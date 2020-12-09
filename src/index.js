@@ -1,4 +1,7 @@
 let addToy = false;
+// variables needed
+const toyForm = document.querySelector('.container')
+const addBtn = document.querySelector('#new-toy-btn')
 
 // wait until the dom is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#toy-collection").innerHTML += toysHTML.join('')
     })
   
-  toyForm.addEventListener("submit", function (e) {
-    preventDefault()
+  toyForm.addEventListener("submit", function(e){
+    e.preventDefault()
     // console.log(e.target.name)
     const toyName = e.target.name.value
     const toyImage = e.target.image.value
@@ -57,13 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#toy-collection").innerHTML = + newToyHTML
         // console.log(newToy))
       })
-
-addBtn.addEventListener('click', () => {
-  // hide & seek with the form
-  addToy = !addToy
-  if (addToy) {
-    toyForm.style.display = 'block'
-  } else {
-    toyForm.style.display = 'none'
-  }
+  })
+  addBtn.addEventListener('click', () => {
+    // hide & seek with the form
+    addToy = !addToy
+    if (addToy) {
+      toyForm.style.display = 'block'
+    } else {
+      toyForm.style.display = 'none'
+    }
+  })
 })

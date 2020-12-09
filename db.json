@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 11
     },
     {
       "id": 2,
@@ -47,6 +47,24 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "title check",
+      "image": "test img",
+      "likes": 99,
+      "id": 9
+    },
+    {
+      "name": "test name",
+      "image": "not an image",
+      "likes": 99,
+      "id": 10
+    },
+    {
+      "name": "danganronpa",
+      "image": "not an image",
+      "likes": 99,
+      "id": 11
     }
   ]
 }

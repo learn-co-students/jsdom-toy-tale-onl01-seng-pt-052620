@@ -2,7 +2,7 @@ let addToy = false;
 // variables needed
 const toyForm = document.querySelector('.container')
 const addBtn = document.querySelector('#new-toy-btn')
-
+const toyCollection = document.querySelector("#toy-collection")
 // wait until the dom is loaded
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `
       })
       // add to DOM
-      document.querySelector("#toy-collection").innerHTML += toysHTML.join('')
+      toyCollection.innerHTML += toysHTML.join('')
     })
   
   toyForm.addEventListener("submit", function(e){
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         `
         // THEN update dom
-        document.querySelector("#toy-collection").innerHTML = + newToyHTML
+        toyCollection.innerHTML += newToyHTML
         // console.log(newToy))
       })
   })

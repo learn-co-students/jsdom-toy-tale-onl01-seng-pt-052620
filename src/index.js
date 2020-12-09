@@ -69,9 +69,19 @@ document.addEventListener("DOMContentLoaded", () => {
       let currentLikes = parseInt(e.target.previousElementSibling.innerText)
       // add one for button click
       let newLikes = currentLikes + 1
-      // set new value to likes
+      // set new value to likes on DOM
       e.target.previousElementSibling.innerText = newLikes + " likes"
-      console.log(e.target)
+      // console.log(e.target)
+      fetch(`http://localhost:3000/toys/${e.target.dataset.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "Application/json"
+        },
+        body: JSON.stringify({
+          likes: newLikes
+        })
+      })
     }
    })
 

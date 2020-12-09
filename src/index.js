@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2>${toy.name}</h2>
       <img src=${toy.image} class="toy-avatar" />
       <p>${toy.likes} Likes </p>
-      <button class="like-btn">Like <3</button>
+      <button  data-id="${toy.id}" class="like-btn">Like <3</button>
     </div>
         `
       })
@@ -53,14 +53,28 @@ document.addEventListener("DOMContentLoaded", () => {
           <h2>${newToy.name}</h2>
           <img src=${newToy.image} class="toy-avatar"/>
           <p>${newToy.likes} Likes</p>
-          <button class="like-btn">Like <3</button>
+          <button data-id="${newToy.id}" class="like-btn">Like <3</button>
         </div>
         `
         // THEN update dom
         toyCollection.innerHTML += newToyHTML
+        e.target.reset()
         // console.log(newToy))
       })
   })
+  // adding likes when clicking like button
+  toyCollection.addEventListener("click", (e) => {
+    if (e.target.className === "like-btn") {
+      // get from dom, parseInt for number
+      let currentLikes = parseInt(e.target.previousElementSibling.innerText)
+      // add one for button click
+      let newLikes = currentLikes + 1
+      // set new value to likes
+      e.target.previousElementSibling.innerText = newLikes + " likes"
+      console.log(e.target)
+    }
+   })
+
   addBtn.addEventListener('click', () => {
     // hide & seek with the form
     addToy = !addToy
